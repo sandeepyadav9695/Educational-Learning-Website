@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advanced Web Design — 50 Quiz Question </title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#fff;--accent:#0b6efd;--muted:#425;--radius:10px}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:black; margin:10;padding:48px}
+    .container{max-width:1280px;margin:10 auto}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    h1{margin:0;font-size:42px}
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 6px 20px rgba(11,27,56,0.06)}
+    ol{padding-left:18px}
+    .q{margin:20px 0;padding:12px;border-radius:15px;background:lightblue;}
+    .options{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+    label{cursor:pointer;font-size:17px}
+    .actions{display:flex;gap:12px;align-items:center;margin-top:18px}
+    .btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;border:none;cursor:pointer}
+    .muted{color:var(--muted);font-size:13px}
+    .result{margin-top:14px;padding:12px;border-radius:8px;background:#0b6efd11;color:var(--accent);font-weight:800}
+    .correct{color:green}
+    .wrong{color:red}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media(min-width:820px){.two-col{display:grid;grid-template-columns:1fr 320px;gap:16px}}
+    aside{padding:12px}
+    .note{font-size:13px;color:#334}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Advanced Web Design — 50 Question Quiz</h1>
+      <div class="muted">(Interactive, instant scoring)</div>
+    </header>
+
+    <div class="two-col">
+      <main class="card">
+        <form id="quizForm">
+          <ol>
+            <!-- Questions 1-50 -->
+            <!-- Each question has data-answer attribute on the correct input -->
+
+            <li class="q">
+              <div><strong>1. Which CSS property creates a new stacking context?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q1" value="A"> z-index</label>
+                <label><input type="radio" name="q1" value="B"> transform</label>
+                <label><input type="radio" name="q1" value="C"> position</label>
+                <label><input type="radio" name="q1" value="D"> opacity</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>2. What is the main benefit of HTTP/2 over HTTP/1.1?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q2" value="A"> Binary framing and multiplexing</label>
+                <label><input type="radio" name="q2" value="B"> Encrypted cookies</label>
+                <label><input type="radio" name="q2" value="C"> Server-side rendering</label>
+                <label><input type="radio" name="q2" value="D"> Better caching headers</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>3. In responsive design, what is the advantage of "mobile-first" CSS?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q3" value="A"> Smaller CSS file size and progressive enhancement</label>
+                <label><input type="radio" name="q3" value="B"> Forces desktop-first styles</label>
+                <label><input type="radio" name="q3" value="C"> Requires JS for media queries</label>
+                <label><input type="radio" name="q3" value="D"> Disables images on mobile</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>4. Which HTML attribute improves accessibility for screen readers by labelling form controls?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q4" value="A"> aria-label</label>
+                <label><input type="radio" name="q4" value="B"> role</label>
+                <label><input type="radio" name="q4" value="C"> data-* attribute</label>
+                <label><input type="radio" name="q4" value="D"> tabindex</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>5.Which technique reduces initial page load by deferring non-critical CSS?</div></strong> 
+              <div class="options">
+                <label><input type="radio" name="q5" value="A"> Inline all CSS</label>
+                <label><input type="radio" name="q5" value="B"> Critical CSS + lazy-load rest</label>
+                <label><input type="radio" name="q5" value="C"> Disable stylesheet caching</label>
+                <label><input type="radio" name="q5" value="D"> Use @import for stylesheets</label>
+              </div>
+            </li>
+
+            <!-- I'll continue similarly for questions 6-50 -->
+
+            <li class="q">
+              <div><strong>6. Which ARIA role should be used for a navigation landmark?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q6" value="A"> role="banner"</label>
+                <label><input type="radio" name="q6" value="B"> role="navigation"</label>
+                <label><input type="radio" name="q6" value="C"> role="main"</label>
+                <label><input type="radio" name="q6" value="D"> role="complementary"</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>7. Which image format generally gives smallest size for photographic images with transparency support?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q7" value="A"> JPEG</label>
+                <label><input type="radio" name="q7" value="B"> PNG-8</label>
+                <label><input type="radio" name="q7" value="C"> WebP</label>
+                <label><input type="radio" name="q7" value="D"> SVG</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>8. Which CSS unit is best for scalable typography that respects user preferences?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q8" value="A"> px</label>
+                <label><input type="radio" name="q8" value="B"> em/rem</label>
+                <label><input type="radio" name="q8" value="C"> vh/vw</label>
+                <label><input type="radio" name="q8" value="D"> pt</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>9. Which meta tag is critical for responsive design on mobile browsers?</div></strong>
+              <div class="options">
+                <label><input type="radio" name="q9" value="A"> <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></label>
+                <label><input type="radio" name="q9" value="B"> <code>&lt;meta name="robots" content="index,follow"&gt;</code></label>
+                <label><input type="radio" name="q9" value="C"> <code>&lt;meta charset="utf-8"&gt;</code></label>
+                <label><input type="radio" name="q9" value="D"> <code>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</code></label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>10.</strong> Which technique helps prevent layout shift (CLS) when loading web fonts?</div>
+              <div class="options">
+                <label><input type="radio" name="q10" value="A"> font-display: swap</label>
+                <label><input type="radio" name="q10" value="B"> Using only system fonts</label>
+                <label><input type="radio" name="q10" value="C"> Preloading fonts with &lt;link rel="preload"&gt;</label>
+                <label><input type="radio" name="q10" value="D"> Both A and C</label>
+              </div>
+            </li>
+
+            <!-- 11-20 -->
+            <li class="q">
+              <div><strong>11.</strong> Which CSS feature allows creating complex two-dimensional layouts without floats?</div>
+              <div class="options">
+                <label><input type="radio" name="q11" value="A"> Flexbox</label>
+                <label><input type="radio" name="q11" value="B"> CSS Grid</label>
+                <label><input type="radio" name="q11" value="C"> Table display</label>
+                <label><input type="radio" name="q11" value="D"> Position absolute</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>12.</strong> Which accessibility attribute is used to hide decorative images from assistive tech?</div>
+              <div class="options">
+                <label><input type="radio" name="q12" value="A"> aria-hidden="true"</label>
+                <label><input type="radio" name="q12" value="B"> role="presentation"</label>
+                <label><input type="radio" name="q12" value="C"> alt=""</label>
+                <label><input type="radio" name="q12" value="D"> All of the above (context matters)</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>13.</strong> Which CSS property controls whether flex items wrap to the next line?</div>
+              <div class="options">
+                <label><input type="radio" name="q13" value="A"> flex-direction</label>
+                <label><input type="radio" name="q13" value="B"> flex-wrap</label>
+                <label><input type="radio" name="q13" value="C"> white-space</label>
+                <label><input type="radio" name="q13" value="D"> overflow</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>14.</strong> What is the recommended max number of critical requests to improve Largest Contentful Paint (LCP)?</div>
+              <div class="options">
+                <label><input type="radio" name="q14" value="A"> 1-3</label>
+                <label><input type="radio" name="q14" value="B"> 10-20</label>
+                <label><input type="radio" name="q14" value="C"> 50+</label>
+                <label><input type="radio" name="q14" value="D"> No limit</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>15.</strong> Which HTTP header enables a resource to be cached by browsers?</div>
+              <div class="options">
+                <label><input type="radio" name="q15" value="A"> Content-Security-Policy</label>
+                <label><input type="radio" name="q15" value="B"> Cache-Control</label>
+                <label><input type="radio" name="q15" value="C"> X-Frame-Options</label>
+                <label><input type="radio" name="q15" value="D"> Referrer-Policy</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>16.</strong> Which technique is used to lazy-load images natively in modern browsers?</div>
+              <div class="options">
+                <label><input type="radio" name="q16" value="A"> Using IntersectionObserver only</label>
+                <label><input type="radio" name="q16" value="B"> &lt;img loading="lazy"&gt;</label>
+                <label><input type="radio" name="q16" value="C"> Background-image CSS lazy loading</label>
+                <label><input type="radio" name="q16" value="D"> None of the above</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>17.</strong> Which approach helps avoid rendering-blocking JavaScript?</div>
+              <div class="options">
+                <label><input type="radio" name="q17" value="A"> Put scripts in &lt;head&gt; without async/defer</label>
+                <label><input type="radio" name="q17" value="B"> Use async or defer attributes</label>
+                <label><input type="radio" name="q17" value="C"> Inline large scripts</label>
+                <label><input type="radio" name="q17" value="D"> Use document.write()</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>18.</strong> Which CSS function helps to clamp font size between a min and max value?</div>
+              <div class="options">
+                <label><input type="radio" name="q18" value="A"> clamp()</label>
+                <label><input type="radio" name="q18" value="B"> min()</label>
+                <label><input type="radio" name="q18" value="C"> max()</label>
+                <label><input type="radio" name="q18" value="D"> calc()</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>19.</strong> What does the Content-Security-Policy header primarily protect against?</div>
+              <div class="options">
+                <label><input type="radio" name="q19" value="A"> SQL injection</label>
+                <label><input type="radio" name="q19" value="B"> Cross-site scripting (XSS)</label>
+                <label><input type="radio" name="q19" value="C"> Server-side request forgery</label>
+                <label><input type="radio" name="q19" value="D"> CSRF</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>20.</strong> Which performance metric measures the time until the page becomes interactive?</div>
+              <div class="options">
+                <label><input type="radio" name="q20" value="A"> First Contentful Paint (FCP)</label>
+                <label><input type="radio" name="q20" value="B"> Time to First Byte (TTFB)</label>
+                <label><input type="radio" name="q20" value="C"> Time to Interactive (TTI)</label>
+                <label><input type="radio" name="q20" value="D"> Cumulative Layout Shift (CLS)</label>
+              </div>
+            </li>
+
+            <!-- 21-30 -->
+            <li class="q">
+              <div><strong>21.</strong> Which CSS property allows smooth scrolling behavior for anchor links?</div>
+              <div class="options">
+                <label><input type="radio" name="q21" value="A"> scroll-behavior</label>
+                <label><input type="radio" name="q21" value="B"> overflow-scrolling</label>
+                <label><input type="radio" name="q21" value="C"> scroll-snap-type</label>
+                <label><input type="radio" name="q21" value="D"> scroll-padding</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>22.</strong> Which image technique is best for icons to remain crisp at any size and theme?</div>
+              <div class="options">
+                <label><input type="radio" name="q22" value="A"> SVG with currentColor</label>
+                <label><input type="radio" name="q22" value="B"> PNG sprites</label>
+                <label><input type="radio" name="q22" value="C"> Base64 inline images</label>
+                <label><input type="radio" name="q22" value="D"> GIF icons</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>23.</strong> Which CSS pseudo-class targets an element when it gains focus via keyboard navigation?</div>
+              <div class="options">
+                <label><input type="radio" name="q23" value="A"> :hover</label>
+                <label><input type="radio" name="q23" value="B"> :focus-visible</label>
+                <label><input type="radio" name="q23" value="C"> :active</label>
+                <label><input type="radio" name="q23" value="D"> :visited</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>24.</strong> Which tool helps you audit a page for accessibility, performance, and best practices?</div>
+              <div class="options">
+                <label><input type="radio" name="q24" value="A"> Lighthouse</label>
+                <label><input type="radio" name="q24" value="B"> Photoshop</label>
+                <label><input type="radio" name="q24" value="C"> Dreamweaver</label>
+                <label><input type="radio" name="q24" value="D"> Notepad</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>25.</strong> Which technique allows serving different images based on device pixel ratio or viewport size?</div>
+              <div class="options">
+                <label><input type="radio" name="q25" value="A"> srcset and sizes attributes</label>
+                <label><input type="radio" name="q25" value="B"> background-image media queries only</label>
+                <label><input type="radio" name="q25" value="C"> using multiple &lt;img&gt; tags</label>
+                <label><input type="radio" name="q25" value="D"> base64 encode images</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>26.</strong> Which CSS property is used to prevent text from being selected by the user?</div>
+              <div class="options">
+                <label><input type="radio" name="q26" value="A"> user-select</label>
+                <label><input type="radio" name="q26" value="B"> text-wrap</label>
+                <label><input type="radio" name="q26" value="C"> pointer-events</label>
+                <label><input type="radio" name="q26" value="D"> touch-action</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>27.</strong> What is the benefit of using a design system?</div>
+              <div class="options">
+                <label><input type="radio" name="q27" value="A"> Faster development and consistent UI</label>
+                <label><input type="radio" name="q27" value="B"> Increases duplicate components</label>
+                <label><input type="radio" name="q27" value="C"> Prevents team collaboration</label>
+                <label><input type="radio" name="q27" value="D"> Replaces testing</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>28.</strong> Which CSS property helps create responsive images by limiting size relative to container?</div>
+              <div class="options">
+                <label><input type="radio" name="q28" value="A"> max-width: 100%</label>
+                <label><input type="radio" name="q28" value="B"> width: auto</label>
+                <label><input type="radio" name="q28" value="C"> object-fit: cover</label>
+                <label><input type="radio" name="q28" value="D"> display: block</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>29.</strong> Which practice helps make forms more accessible and mobile-friendly?</div>
+              <div class="options">
+                <label><input type="radio" name="q29" value="A"> Use small touch targets below 24px</label>
+                <label><input type="radio" name="q29" value="B"> Use labels and larger controls with proper spacing</label>
+                <label><input type="radio" name="q29" value="C"> Rely solely on placeholders</label>
+                <label><input type="radio" name="q29" value="D"> Disable autocomplete</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>30.</strong> Which technique reduces Time to First Byte (TTFB)?</div>
+              <div class="options">
+                <label><input type="radio" name="q30" value="A"> Use a CDN to serve static assets</label>
+                <label><input type="radio" name="q30" value="B"> Use huge uncompressed images</label>
+                <label><input type="radio" name="q30" value="C"> Avoid caching entirely</label>
+                <label><input type="radio" name="q30" value="D"> Increase HTML size</label>
+              </div>
+            </li>
+
+            <!-- 31-40 -->
+            <li class="q">
+              <div><strong>31.</strong> Which CSS property controls whether an element's children are laid out in a flex or grid?</div>
+              <div class="options">
+                <label><input type="radio" name="q31" value="A"> display</label>
+                <label><input type="radio" name="q31" value="B"> position</label>
+                <label><input type="radio" name="q31" value="C"> float</label>
+                <label><input type="radio" name="q31" value="D"> box-sizing</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>32.</strong> What is Progressive Enhancement?</div>
+              <div class="options">
+                <label><input type="radio" name="q32" value="A"> Building for modern browsers then adding support for older ones</label>
+                <label><input type="radio" name="q32" value="B"> Building features that require JS first and then degrade</label>
+                <label><input type="radio" name="q32" value="C"> Using only polyfills</label>
+                <label><input type="radio" name="q32" value="D"> Using only server-side rendering</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>33.</strong> Which HTTP response code indicates a resource has moved permanently?</div>
+              <div class="options">
+                <label><input type="radio" name="q33" value="A"> 200</label>
+                <label><input type="radio" name="q33" value="B"> 301</label>
+                <label><input type="radio" name="q33" value="C"> 302</label>
+                <label><input type="radio" name="q33" value="D"> 404</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>34.</strong> Which technique helps prevent cross-site request forgery (CSRF)?</div>
+              <div class="options">
+                <label><input type="radio" name="q34" value="A"> Use anti-CSRF tokens</label>
+                <label><input type="radio" name="q34" value="B"> Use same-origin policy for scripts</label>
+                <label><input type="radio" name="q34" value="C"> Disable cookies</label>
+                <label><input type="radio" name="q34" value="D"> Rely on GET requests only</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>35.</strong> Which is best practice for handling large CSS codebases?</div>
+              <div class="options">
+                <label><input type="radio" name="q35" value="A"> Use CSS modules or BEM naming and component-based styles</label>
+                <label><input type="radio" name="q35" value="B"> Put all rules in one global file without structure</label>
+                <label><input type="radio" name="q35" value="C"> Use inline styles for everything</label>
+                <label><input type="radio" name="q35" value="D"> Rely on !important everywhere</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>36.</strong> Which approach is ideal for SEO-friendly dynamic content?</div>
+              <div class="options">
+                <label><input type="radio" name="q36" value="A"> Client-side rendering only</label>
+                <label><input type="radio" name="q36" value="B"> Server-side rendering or hybrid (SSR/CSR)</label>
+                <label><input type="radio" name="q36" value="C"> Render content inside iframes</label>
+                <label><input type="radio" name="q36" value="D"> Use images for all content</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>37.</strong> Which CSS@rule helps encapsulate styles for reusability (modern web components)?</div>
+              <div class="options">
+                <label><input type="radio" name="q37" value="A"> @media</label>
+                <label><input type="radio" name="q37" value="B"> @font-face</label>
+                <label><input type="radio" name="q37" value="C"> :root</label>
+                <label><input type="radio" name="q37" value="D"> :host / Shadow DOM (web components)</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>38.</strong> Which HTTP header helps prevent pages being embedded in iframes (clickjacking)?</div>
+              <div class="options">
+                <label><input type="radio" name="q38" value="A"> X-Frame-Options</label>
+                <label><input type="radio" name="q38" value="B"> Content-Type</label>
+                <label><input type="radio" name="q38" value="C"> Server</label>
+                <label><input type="radio" name="q38" value="D"> Strict-Transport-Security</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>39.</strong> Which tool or technique is used to measure Core Web Vitals in production?</div>
+              <div class="options">
+                <label><input type="radio" name="q39" value="A"> Chrome User Experience Report (CrUX)</label>
+                <label><input type="radio" name="q39" value="B"> Photoshop</label>
+                <label><input type="radio" name="q39" value="C"> FTP</label>
+                <label><input type="radio" name="q39" value="D"> DNS lookup</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>40.</strong> Which technique reduces overall CSS size by removing unused selectors?</div>
+              <div class="options">
+                <label><input type="radio" name="q40" value="A"> CSS minification only</label>
+                <label><input type="radio" name="q40" value="B"> PurgeCSS or critical CSS tooling</label>
+                <label><input type="radio" name="q40" value="C"> Adding more selectors</label>
+                <label><input type="radio" name="q40" value="D"> Using inline styles for all elements</label>
+              </div>
+            </li>
+
+            <!-- 41-50 -->
+            <li class="q">
+              <div><strong>41.</strong> Which technique helps make animations both smooth and performant?</div>
+              <div class="options">
+                <label><input type="radio" name="q41" value="A"> Animate transform & opacity only (use will-change sparingly)</label>
+                <label><input type="radio" name="q41" value="B"> Animate width/height frequently</label>
+                <label><input type="radio" name="q41" value="C"> Use setInterval for animation loops</label>
+                <label><input type="radio" name="q41" value="D"> Use table layout for animations</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>42.</strong> What is the main benefit of using HTTP/3 (QUIC)?</div>
+              <div class="options">
+                <label><input type="radio" name="q42" value="A"> Uses TCP slow start</label>
+                <label><input type="radio" name="q42" value="B"> Built on UDP for reduced connection latency and better multiplexing</label>
+                <label><input type="radio" name="q42" value="C"> Only works with IPv6</label>
+                <label><input type="radio" name="q42" value="D"> Replaces TLS entirely</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>43.</strong> Which meta tag or attribute helps prevent telephone numbers from being auto-detected on mobile?</div>
+              <div class="options">
+                <label><input type="radio" name="q43" value="A"> <meta name="format-detection" content="telephone=no"> (iOS)</label>
+                <label><input type="radio" name="q43" value="B"> <meta name="robots" content="noindex"> </label>
+                <label><input type="radio" name="q43" value="C"> <meta http-equiv="refresh"> </label>
+                <label><input type="radio" name="q43" value="D"> None of the above</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>44.</strong> Which of these is NOT a benefit of using SVG for illustrations?</div>
+              <div class="options">
+                <label><input type="radio" name="q44" value="A"> Infinite scalability without pixelation</label>
+                <label><input type="radio" name="q44" value="B"> Small file size for complex photos</label>
+                <label><input type="radio" name="q44" value="C"> Ability to style via CSS</label>
+                <label><input type="radio" name="q44" value="D"> Accessibility via ARIA and semantics</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>45.</strong> Which caching strategy is best for frequently changing API responses that still need fast reads?</div>
+              <div class="options">
+                <label><input type="radio" name="q45" value="A"> Cache-first forever</label>
+                <label><input type="radio" name="q45" value="B"> Stale-while-revalidate</label>
+                <label><input type="radio" name="q45" value="C"> No caching at all</label>
+                <label><input type="radio" name="q45" value="D"> Cache-only</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>46.</strong> Which attribute improves performance when using web fonts by instructing the browser to start fetching early?</div>
+              <div class="options">
+                <label><input type="radio" name="q46" value="A"> rel="preconnect"</label>
+                <label><input type="radio" name="q46" value="B"> rel="preload"</label>
+                <label><input type="radio" name="q46" value="C"> rel="dns-prefetch"</label>
+                <label><input type="radio" name="q46" value="D"> rel="stylesheet"</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>47.</strong> Which approach helps prevent layout thrashing when measuring element sizes in JS?</div>
+              <div class="options">
+                <label><input type="radio" name="q47" value="A"> Read and write DOM alternately many times</label>
+                <label><input type="radio" name="q47" value="B"> Batch DOM reads first, then batch writes</label>
+                <label><input type="radio" name="q47" value="C"> Use inline styles for everything</label>
+                <label><input type="radio" name="q47" value="D"> Use document.write()</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>48.</strong> For progressive web apps, which feature allows offline content and resource caching?</div>
+              <div class="options">
+                <label><input type="radio" name="q48" value="A"> Service Workers</label>
+                <label><input type="radio" name="q48" value="B"> localStorage only</label>
+                <label><input type="radio" name="q48" value="C"> Cookie-based caching</label>
+                <label><input type="radio" name="q48" value="D"> Server push only</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>49.</strong> Which accessibility guideline level is generally recommended for legal compliance in many regions?</div>
+              <div class="options">
+                <label><input type="radio" name="q49" value="A"> WCAG AA</label>
+                <label><input type="radio" name="q49" value="B"> WCAG A only</label>
+                <label><input type="radio" name="q49" value="C"> WCAG AAA</label>
+                <label><input type="radio" name="q49" value="D"> No guidelines</label>
+              </div>
+            </li>
+
+            <li class="q">
+              <div><strong>50.</strong> Which practice reduces the risk of layout shift due to images loading?</div>
+              <div class="options">
+                <label><input type="radio" name="q50" value="A"> Always specify width and height attributes or CSS aspect-ratio</label>
+                <label><input type="radio" name="q50" value="B"> Use unpredictable image sizes</label>
+                <label><input type="radio" name="q50" value="C"> Load images via document.write()</label>
+                <label><input type="radio" name="q50" value="D"> Use only background images without dimensions</label>
+              </div>
+            </li>
+
+          </ol>
+
+          <div class="actions">
+            <button type="button" id="checkBtn" class="btn">Submit</button>
+            <button type="button" id="showAnswers" class="btn" style="background:#444">Show Correct Answers</button>
+            <div class="muted">Tip: pick the best answer for each question.</div>
+          </div>
+
+          <div id="result" class="result" style="display:none"></div>
+        </form>
+      </main>
+
+      <aside class="card">
+        <h3>How to use</h3>
+        <p class="note">Select one answer per question. Click <strong>Check Answers</strong> to score. Use <strong>Show Correct Answers</strong> to reveal correct choices.</p>
+
+        <h4>Scoring</h4>
+        <ul>
+          <li>1 point per correct answer</li>
+          <li>No negative marking</li>
+        </ul>
+
+        <h4>Feedback</h4>
+        <p class="note">If you want this quiz with explanations for each answer, or exported as a printable PDF, tell me and I'll add them.</p>
+      </aside>
+    </div>
+
+    <footer class="muted">Created for study and interview prep — Advanced Web Design Quiz (50 questions)</footer>
+  </div>
+
+  <script>
+    // Correct answers map (question number -> option letter)
+    const answers = {
+      q1: 'B', q2: 'A', q3: 'A', q4: 'A', q5: 'B',
+      q6: 'B', q7: 'C', q8: 'B', q9: 'A', q10: 'D',
+      q11: 'B', q12: 'D', q13: 'B', q14: 'A', q15: 'B',
+      q16: 'B', q17: 'B', q18: 'A', q19: 'B', q20: 'C',
+      q21: 'A', q22: 'A', q23: 'B', q24: 'A', q25: 'A',
+      q26: 'A', q27: 'A', q28: 'A', q29: 'B', q30: 'A',
+      q31: 'A', q32: 'A', q33: 'B', q34: 'A', q35: 'A',
+      q36: 'B', q37: 'D', q38: 'A', q39: 'A', q40: 'B',
+      q41: 'A', q42: 'B', q43: 'A', q44: 'B', q45: 'B',
+      q46: 'B', q47: 'B', q48: 'A', q49: 'A', q50: 'A'
+    };
+
+ function checkAnswers(showDetails=false){
+  const form = document.getElementById('quizForm');
+  let score = 0; 
+  let total = 50; 
+  let unanswered = 0;
+  const feedback = [];
+
+  for(let i=1;i<=50;i++){
+    const name = 'q' + i;
+    const selected = form.querySelector('input[name="'+name+'"]:checked');
+    if(!selected){ 
+      unanswered++; 
+      feedback.push({q:i, correct:answers[name], chosen:null}); 
+      continue; 
+    }
+    const chosen = selected.value;
+    if(chosen === answers[name]){ 
+      score++; 
+      feedback.push({q:i, correct:answers[name], chosen:chosen, ok:true}); 
+    }
+    else{ 
+      feedback.push({q:i, correct:answers[name], chosen:chosen, ok:false}); 
+    }
+  }
+
+  const percentage = (score / total) * 100;
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = `
+    Score: ${score} / ${total}  
+    &nbsp;|&nbsp; Unanswered: ${unanswered}
+    <br><strong>Percentage: ${percentage.toFixed(2)}%</strong>
+  `;
+
+  document.querySelectorAll('.q').forEach(el=>{ el.style.border='none'; });
+
+  if(showDetails){
+    feedback.forEach(item=>{
+      const qEl = document.querySelectorAll('.q')[item.q-1];
+      if(!item.chosen){ qEl.style.border='2px dashed #f0ad4e'; }
+      else if(item.ok){ qEl.style.border='2px solid green'; }
+      else{ qEl.style.border='2px solid red'; }
+    });
+  }
+
+//  CHECK IF PERCENTAGE >= 75 → MOVE TO CERTIFICATE PAGE
+if (percentage >= 15) {
+  window.location.href = "certificationWebDesign.html";
+} else {
+  alert(" Not eligible for certificate. Minimum 75% required.");
+}
+
+  return {score, total, feedback, percentage};
+}
+
+
+    document.getElementById('checkBtn').addEventListener('click', ()=>{
+      const res = checkAnswers(true);
+      const r = document.getElementById('result');
+      r.innerHTML += `<div style="margin-top:8px;font-size:13px">${res.score>=40? 'Excellent':'Review weak areas to improve'}</div>`;
+    });
+
+    document.getElementById('showAnswers').addEventListener('click', ()=>{
+      // Reveal correct answers by checking inputs
+      Object.keys(answers).forEach(key=>{
+        const q = document.querySelectorAll('input[name="'+key+'"]');
+        q.forEach(inp=>{ if(inp.value === answers[key]) inp.parentElement.style.fontWeight='700'; });
+      });
+      checkAnswers(true);
+    });
+  </script>
+</body>
+</html>

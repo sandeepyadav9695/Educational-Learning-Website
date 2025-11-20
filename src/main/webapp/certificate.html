@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificate Generation</title>
+
+  <!-- Load jsPDF and html2canvas from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #357ABD;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Certificate Generation</h1>
+
+    <form id="certForm">
+      <label>Full Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+
+      <label>Mobile No:</label>
+      <input type="text" id="mobile" placeholder="Enter your mobile number" required />
+
+      <label>Course:</label>
+      <input type="text" id="course" placeholder="Enter your course name" required />
+
+      <button type="button" onclick="generateCertificate()">Generate Certificate</button>
+    </form>
+  </div>
+
+  <script>
+    async function generateCertificate() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const course = document.getElementById("course").value.trim();
+
+      // Validation
+      if (!name || !email || !mobile || !course) {
+        alert("Please fill out all fields!");
+        return;
+      }
+
+      if (!/^\d{10}$/.test(mobile)) {
+        alert("Enter a valid 10-digit mobile number!");
+        return;
+      }
+
+      const date = new Date().toLocaleDateString();
+
+      // QR Data
+      const qrData = `Certificate of Completion\nName: ${name}\nEmail: ${email}\nMobile: ${mobile}\nCourse: ${course}\nIssued on: ${date}`;
+      const qrUrl = `https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=${encodeURIComponent(qrData)}`;
+
+      // Open new window
+      const certWindow = window.open("", "_blank");
+      certWindow.document.write(`
+        <html>
+        <head>
+          <title>Certificate of Completion</title>
+          <style>
+            body {
+              font-family: 'Georgia', serif;
+              background: #fdfdfd;
+              text-align: center;
+              padding: 40px;
+            }
+            .cert-container {
+              border: 8px solid #4a90e2;
+              border-radius: 20px;
+              padding: 40px;
+              max-width: 700px;
+              margin: auto;
+              box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+              background: #fff;
+            }
+            h2 {
+              color: #333;
+            }
+            .cert-name {
+              font-size: 28px;
+              font-weight: bold;
+              color: #2c3e50;
+            }
+            .cert-course {
+              font-size: 22px;
+              color: #16a085;
+            }
+            .qr {
+              margin-top: 20px;
+            }
+            button {
+              margin-top: 20px;
+              padding: 10px 20px;
+              background-color: #4a90e2;
+              color: #fff;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              font-size: 16px;
+            }
+            button:hover {
+              background-color: #357ABD;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="cert-container" id="certificate">
+            <h2>🎓 Certificate of Completion 🎓</h2>
+            <p>This is to certify that</p>
+            <p class="cert-name">${name}</p>
+            <p>has successfully completed the course</p>
+            <p class="cert-course">${course}</p>
+            <p>Contact: ${email} | ${mobile}</p>
+            <p><i>Issued on: ${date}</i></p>
+          </div>
+          <button onclick="downloadPDF()">Download Certificate</button>
+
+          <script>
+            async function downloadPDF() {
+              const { jsPDF } = window.jspdf;
+              const cert = document.getElementById("certificate");
+
+              // Capture the certificate as an image
+              const canvas = await html2canvas(cert);
+              const imgData = canvas.toDataURL("image/png");
+
+              // Create PDF
+              const pdf = new jsPDF("p", "mm", "a4");
+              const pageWidth = pdf.internal.pageSize.getWidth();
+              const imgWidth = pageWidth - 20;
+              const imgHeight = (canvas.height * imgWidth) / canvas.width;
+              pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+              pdf.save("Certificate_${name}.pdf");
+            }
+          <\/script>
+        </body>
+        </html>
+      `);
+      certWindow.document.close();
+    }
+  </script>
+</body>
+</html>

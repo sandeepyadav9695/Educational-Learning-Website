@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is Web Design? — Guide</title>
+  <meta name="description" content="Short guide: What is Web Design, Responsive vs Adaptive, Accessibility, E-commerce and Interactive design."/>
+  <style>
+    :root{--bg:#f7f8fa;--card:#fff;--accent:#0b6efd;--muted:#556;--radius:12px}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.6;color:#132; margin:0;background:var(--bg)}
+    header{background:linear-gradient(90deg,#0b6efd22,transparent);padding:32px 18px}
+    .container{max-width:980px;margin:20px auto;padding:0 18px}
+    .card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:0 6px 18px rgba(17,24,39,0.06)}
+    h1{margin:0 0 8px;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+    nav.toc{margin-top:18px}
+    nav.toc ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+    nav.toc a{display:inline-block;padding:8px 12px;background:#eef6ff;border-radius:999px;color:var(--accent);text-decoration:none;font-size:14px}
+    section{margin-top:18px}
+    h2{font-size:20px;margin:12px 0}
+    dl{margin:8px 0}
+    dt{font-weight:700}
+    pre, code{background:#0f172a10;padding:6px;border-radius:6px;display:inline-block}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:760px){.grid{grid-template-columns:1fr 320px}}
+    aside.card{padding:16px}
+    .faq details{margin-bottom:10px}
+    footer{color:var(--muted);font-size:14px;margin:28px 0 60px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:12px}
+    .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container card">
+      <h1>What is Web Design?</h1>
+      <p class="lead">Designing website interfaces (UI) and user experience (UX) to build an engaging, accessible, and brand-consistent online presence.</p>
+      <p class="meta">Last Updated: 20 NOV, 2025</p>
+      <nav class="toc" aria-label="Table of contents">
+        <ul>
+          <li><a href="#responsive">Responsive Web Design</a></li>
+          <li><a href="#adaptive">Adaptive Web Design</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#ecommerce">E-Commerce Web Design</a></li>
+          <li><a href="#interactive">Interactive Web Design</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <article class="card">
+        <section id="intro">
+          <h2>Overview</h2>
+          <p>Web Design focuses on the visual and experiential aspects of websites. It includes <strong>User Interface (UI) Design</strong> — the look and layout — and <strong>User Experience (UX) Design</strong> — how users navigate and interact with the site. Good design improves brand perception, user retention, and conversion.</p>
+        </section>
+
+        <section id="responsive">
+          <h2>What is Responsive Web Design?</h2>
+          <p>Responsive Web Design creates pages that adapt fluidly to different screen sizes (desktop, tablet, mobile). Instead of separate layouts, the same interface adjusts using flexible grids, media queries, and scalable media so that content and UI elements resize and reorder as needed.</p>
+        </section>
+
+        <section id="adaptive">
+          <h2>What is Adaptive Web Design?</h2>
+          <p>Adaptive Web Design builds <em>different layouts</em> tailored to specific device widths. Unlike responsive design, which reshapes a single layout, adaptive design serves a particular layout optimized for a target device class—potentially improving experience but requiring more design work.</p>
+        </section>
+
+        <section id="accessibility">
+          <h2>What is Accessibility in Web Design?</h2>
+          <p>Accessibility ensures websites can be used by everyone, including people with visual, auditory, motor, or cognitive disabilities. Practices include:</p>
+          <ul>
+            <li>Meaningful <code>alt</code> text for images</li>
+            <li>Captions and transcripts for media</li>
+            <li>Keyboard navigability</li>
+            <li>Sufficient color contrast and readable font sizes</li>
+            <li>Following <abbr title="Web Content Accessibility Guidelines">WCAG</abbr></li>
+          </ul>
+        </section>
+
+        <section id="ecommerce">
+          <h2>What is E‑Commerce Web Design?</h2>
+          <p>E‑commerce web design creates online storefronts and checkout flows that are clear, fast, and trust-building. It focuses on product discovery, persuasive product pages, secure payments, and minimizing friction during purchase to increase conversions.</p>
+        </section>
+
+        <section id="interactive">
+          <h2>What is Interactive Web Design?</h2>
+          <p>Interactive design includes components that respond to user actions—forms, animations, micro-interactions, filters, and dynamic content. These elements engage users and make the site feel alive, but they should be used thoughtfully to maintain performance and accessibility.</p>
+        </section>
+
+        <section id="faqs">
+          <h2>FAQs</h2>
+          <div class="faq">
+            <details>
+              <summary><strong>1. What is Web Design?</strong></summary>
+              <p>Web Design is the field related to designing websites on the Internet, focusing on look and usability.</p>
+            </details>
+
+            <details>
+              <summary><strong>2. What is Adaptive Web Design?</strong></summary>
+              <p>Adaptive Web Design refers to creating different layouts for specific device screen sizes.</p>
+            </details>
+
+            <details>
+              <summary><strong>3. What is Accessibility in Web Design?</strong></summary>
+              <p>Designing websites so that people with disabilities can use them easily, e.g. using alt text, captions, and proper semantics.</p>
+            </details>
+
+            <details>
+              <summary><strong>4. What is E‑Commerce Web Design?</strong></summary>
+              <p>Designing online shop websites that let sellers present products and customers buy with minimal friction.</p>
+            </details>
+
+            <details>
+              <summary><strong>5. What is Interactive Web Design?</strong></summary>
+              <p>Designing websites where users actively interact with elements such as forms, animations, video, and interactive widgets.</p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <aside class="card" aria-labelledby="resources">
+        <h3 id="resources">Quick Resources</h3>
+        <p class="meta">Use these as a starting point for study or implementation:</p>
+        <ul>
+          <li>WCAG Guidelines (accessibility)</li>
+          <li>Mobile-first responsive patterns</li>
+          <li>Design systems &amp; style guides</li>
+          <li>Performance optimization &amp; progressive enhancement</li>
+        </ul>
+        <p><a class="btn" href="#faqs">Jump to FAQs</a>
+        <a class="btn" href="quizeWebDesign.html"><b>Quiz</b></a></p>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Content adapted into a clean HTML page for study and reference. If you want this downloadable as a PDF or need a printable handout, tell me which format you prefer.</p>
+    </footer>
+  </main>
+</body>
+</html>

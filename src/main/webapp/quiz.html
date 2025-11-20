@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz</title>
+    <link href="img/favicon.ico" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300|Nunito:400,700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1724;
+            --bg:#28a745;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --accent: #0ea5a4;
+            --success: #10b981;
+            --danger: #ef4444;
+            --radius: 12px;
+            --max-width: 900px;
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background:#1dbf73; /*linear-gradient(180deg, #071024 0%, #0b1220 100%)*/
+            color: #0f1724;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: var(--max-width);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px
+        }
+
+        .brand {
+            background: var(--card);
+            padding: 10px 14px;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(2, 6, 23, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand h1 {
+            font-size: 18px;
+            margin: 0
+        }
+
+        .card {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.25)
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px
+        }
+
+        .meta {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .meta .chip {
+            font-size: 13px;
+            padding: 6px 10px;
+            background: #eef2ff;
+            border-radius: 999px
+        }
+
+        .question {
+            font-size: 18px;
+            margin: 14px 0
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .answer {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #e6e9ef;
+            background: white;
+            cursor: pointer;
+            transition: all .18s;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .answer:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06)
+        }
+
+        .answer.selected {
+            outline: 3px solid rgba(14, 165, 164, 0.12);
+            border-color: var(--accent)
+        }
+
+        .answer.correct {
+            background: linear-gradient(90deg, #ecfdf5, #ecfeef);
+            border-color: var(--success)
+        }
+
+        .answer.wrong {
+            background: linear-gradient(90deg, #fff5f5, #fff8f8);
+            border-color: var(--danger)
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 18px;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 600
+        }
+
+        .btn.primary {
+            background: var(--accent);
+            color: white
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 1px solid #e6e9ef
+        }
+
+        .progress-wrap {
+            flex: 1;
+            min-width: 180px;
+            margin-left: 14px
+        }
+
+        .progress {
+            height: 10px;
+            background: #eef2f6;
+            border-radius: 999px;
+            overflow: hidden
+        }
+
+        .progress>i {
+            display: block;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), #7dd3fc)
+        }
+
+        .footer-stats {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        /* results */
+        .results {
+            display: none
+        }
+
+        .results.show {
+            display: block
+        }
+
+        .score {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 6px 0
+        }
+
+        /* responsive */
+        @media (max-width:720px) {
+            .answers {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px
+            }
+
+            .progress-wrap {
+                width: 100%;
+                margin-left: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <rect x="2" y="2" width="20" height="20" rx="6" fill="#0ea5a4" />
+                    <path d="M7 13l3 3 7-9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <div>
+                    <h1>StudyFlow Quiz</h1>
+                    <div style="font-size:12px;color:var(--muted)">Practice. Learn. Repeat.</div>
+                </div>
+            </div>
+            <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+                <div class="meta">
+                    <div class="chip">5 Questions</div>
+                    <div style="font-size:13px;color:black">Time: <strong id="timeTotal">--</strong></div>
+                                                    <!-- var(--muted) -->
+                </div>
+            </div>
+        </header>
+
+        <main class="card" role="main">
+            <div class="topbar">
+                <div><strong id="qIndex">1</strong> / <span id="qTotal">5</span></div>
+                <div class="progress-wrap" aria-hidden>
+                    <div class="progress" aria-hidden><i id="progressBar"></i></div>
+                </div>
+                <div class="footer-stats">
+                    <div id="timer">00:00</div>
+                    <div id="scoreLabel">Score: 0</div>
+                </div>
+            </div>
+
+            <div id="quizArea">
+                <div class="question" id="questionText">Question will appear here</div>
+                <div class="answers" id="answers"></div>
+
+                <div class="controls">
+                    <div style="display:flex;gap:8px">
+                        <button class="btn ghost" id="prevBtn" aria-label="Previous">Previous</button>
+                        <button class="btn ghost" id="nextBtn" aria-label="Next">Next</button>
+                    </div>
+                    <div style="display:flex;gap:8px">
+                   
+                        
+                        <button class="btn" id="showAnswerBtn">Show Answer</button>
+                        <button class="btn primary" id="submitBtn">Submit Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results" id="results">
+                <h3>Results</h3>
+                <div class="score" id="finalScore">0 / 0</div>
+                <div id="feedback" style="color:var(--muted)"></div>
+                <div style="margin-top:14px;display:flex;gap:10px">
+                    <button class="btn ghost" id="retryBtn">Retry</button>
+                    <button class="btn primary" id="reviewBtn">Review Answers</button>
+                </div>
+                <a href="certificate.html">Certificate</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Sample questions - replace or extend as needed. Keep them small and accessible.
+        const QUESTIONS = [
+            { q: 'Which language runs in a web browser?', choices: ['Java', 'C', 'Python', 'JavaScript'], answer: 3 },
+            { q: 'What does CSS stand for?', choices: ['Central Style Sheets', 'Cascading Style Sheets', 'Cascading Simple Sheets', 'Computer Style Sheets'], answer: 1 },
+            { q: 'Which HTML tag is used to define an unordered list?', choices: ['<ol>', '<ul>', '<li>', '<list>'], answer: 1 },
+            { q: 'Which company developed the React library?', choices: ['Microsoft', 'Apple', 'Facebook', 'Google'], answer: 2 },
+            { q: 'What does HTTP stand for?', choices: ['HyperText Transfer Protocol', 'HyperText Transmission Protocol', 'High Transfer Text Protocol', 'Hyperlink Transfer Text Protocol'], answer: 0 }
+        ];
+
+        // state
+        let index = 0;
+        let score = 0;
+        const userAnswers = new Array(QUESTIONS.length).fill(null);
+        let timerSeconds = QUESTIONS.length * 30; // 30 seconds per question default
+        let timerInterval = null;
+
+        // elements
+        const qTotalEl = document.getElementById('qTotal');
+        const qIndexEl = document.getElementById('qIndex');
+        const questionText = document.getElementById('questionText');
+        const answersEl = document.getElementById('answers');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const showAnswerBtn = document.getElementById('showAnswerBtn');
+        const progressBar = document.getElementById('progressBar');
+        const timerEl = document.getElementById('timer');
+        const timeTotalEl = document.getElementById('timeTotal');
+        const scoreLabel = document.getElementById('scoreLabel');
+        const resultsEl = document.getElementById('results');
+        const quizArea = document.getElementById('quizArea');
+        const finalScore = document.getElementById('finalScore');
+        const feedback = document.getElementById('feedback');
+        const retryBtn = document.getElementById('retryBtn');
+        const reviewBtn = document.getElementById('reviewBtn');
+
+        // helper to escape HTML tags so they show as text
+        function escapeHtml(str) {
+            return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // init
+        function init() {
+            qTotalEl.textContent = QUESTIONS.length;
+            timeTotalEl.textContent = formatTime(timerSeconds);
+            renderQuestion();
+            startTimer();
+            updateProgress();
+        }
+
+        function renderQuestion() {
+            const q = QUESTIONS[index];
+            qIndexEl.textContent = index + 1;
+            questionText.textContent = q.q;
+            answersEl.innerHTML = '';
+            q.choices.forEach((choice, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'answer';
+                btn.setAttribute('data-index', i);
+                btn.setAttribute('aria-pressed', 'false');
+                btn.innerHTML = `<span style="font-weight:600">${String.fromCharCode(65 + i)}</span><div style="flex:1">${escapeHtml(choice)}</div>`;
+                btn.addEventListener('click', () => selectAnswer(i, btn));
+                answersEl.appendChild(btn);
+            });
+            // restore selection
+            if (userAnswers[index] !== null) {
+                const el = answersEl.querySelector('[data-index="' + userAnswers[index] + '"]');
+                if (el) el.classList.add('selected');
+            }
+            // update buttons
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === QUESTIONS.length - 1;
+        }
+
+        function selectAnswer(choiceIndex, btn) {
+            // clear previous
+            answersEl.querySelectorAll('.answer').forEach(a => a.classList.remove('selected', 'correct', 'wrong'));
+            btn.classList.add('selected');
+            userAnswers[index] = choiceIndex;
+            scoreLabel.textContent = `Score: ${calculateScorePreview()}`;
+        }
+
+        function calculateScorePreview() {
+            let s = 0;
+            for (let i = 0; i < userAnswers.length; i++) {
+                if (userAnswers[i] === QUESTIONS[i].answer) s++;
+            }
+            return s;
+        }
+
+        prevBtn.addEventListener('click', () => { index = Math.max(0, index - 1); renderQuestion(); updateProgress(); });
+        nextBtn.addEventListener('click', () => { index = Math.min(QUESTIONS.length - 1, index + 1); renderQuestion(); updateProgress(); });
+
+        showAnswerBtn.addEventListener('click', () => {
+            const correct = QUESTIONS[index].answer;
+            answersEl.querySelectorAll('.answer').forEach(a => {
+                const i = Number(a.getAttribute('data-index'));
+                a.classList.remove('selected');
+                if (i === correct) a.classList.add('correct');
+                else if (userAnswers[index] === i) a.classList.add('wrong');
+            });
+        });
+
+        submitBtn.addEventListener('click', finishQuiz);
+        retryBtn.addEventListener('click', () => {
+            index = 0; score = 0; userAnswers.fill(null); resultsEl.classList.remove('show'); quizArea.style.display = 'block'; startTimer(true); renderQuestion(); updateProgress(); scoreLabel.textContent = 'Score: 0';
+        });
+
+        reviewBtn.addEventListener('click', () => {
+            index = 0; renderQuestion(); revealAnswerForAll();
+        });
+
+        function revealAnswerForAll() {
+            answersEl.querySelectorAll('.answer').forEach(a => {
+                const i = Number(a.getAttribute('data-index'));
+                if (i === QUESTIONS[index].answer) a.classList.add('correct');
+                else if (userAnswers[index] === i) a.classList.add('wrong');
+            });
+        }
+
+        function finishQuiz() {
+            clearInterval(timerInterval);
+            const total = QUESTIONS.length;
+            const s = calculateScorePreview();
+            finalScore.textContent = `${s} / ${total}`;
+            let fb = '';
+            const pct = (s / total) * 100;
+            if (pct === 100) fb = 'Perfect! Great job.';
+            else if (pct >= 70) fb = 'Nice work — keep practicing!';
+            else fb = 'Practice more — you can do it!';
+            feedback.textContent = fb;
+            resultsEl.classList.add('show');
+            quizArea.style.display = 'none';
+        }
+
+        function updateProgress() {
+            const pct = Math.round(((index) / (QUESTIONS.length - 1 || 1)) * 100);
+            progressBar.style.width = pct + '%';
+        }
+
+        function startTimer(reset = false) {
+            if (reset) timerSeconds = QUESTIONS.length * 30;
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                timerEl.textContent = formatTime(timerSeconds);
+                if (timerSeconds <= 0) { clearInterval(timerInterval); finishQuiz(); }
+            }, 1000);
+            timerEl.textContent = formatTime(timerSeconds);
+        }
+
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60); const s = sec % 60; return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextBtn.click();
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'Enter') {
+                const sel = answersEl.querySelector('.answer');
+                if (sel) sel.click();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+
+</html>

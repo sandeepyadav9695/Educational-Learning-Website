@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advanced Web Development Quiz</title>
+<meta charset="UTF-8">
+<style>
+  body { font-family: Arial; background:burlywood; padding: 20px; }
+  .card { background:#fff; padding:20px; margin:15px 0; border-radius:8px;
+          box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+  button { padding:10px 15px; font-size:16px; cursor:pointer; }
+  .btn{ 
+    text-align: center;
+    background-color: blue;
+  }
+</style>
+</head>
+
+<body>
+<h1>Advanced Web Development Quiz</h1>
+
+<form id="quizForm">
+
+<!-- Q1 -->
+<div class="card">
+<p><b>1. Which HTML API allows a web page to store key-value pairs locally?</b></p>
+<label><input type="radio" name="q1" value="a"> DOM API</label><br>
+<label><input type="radio" name="q1" value="b"> LocalStorage API</label><br>
+<label><input type="radio" name="q1" value="c"> Fetch API</label>
+</div>
+
+<!-- Q2 -->
+<div class="card">
+<p><b>2. Which attribute is used to specify that a script should run after HTML parsing?</b></p>
+<label><input type="radio" name="q2" value="a"> async</label><br>
+<label><input type="radio" name="q2" value="b"> defer</label><br>
+<label><input type="radio" name="q2" value="c"> preload</label>
+</div>
+
+<!-- Q3 -->
+<div class="card">
+<p><b>3. What does the “shadow DOM” provide?</b></p>
+<label><input type="radio" name="q3" value="a"> Full page styling</label><br>
+<label><input type="radio" name="q3" value="b"> Encapsulation for custom elements</label><br>
+<label><input type="radio" name="q3" value="c"> Faster rendering</label>
+</div>
+
+<!-- Q4 -->
+<div class="card">
+<p><b>4. Which method converts a JavaScript object into JSON string?</b></p>
+<label><input type="radio" name="q4" value="a"> JSON.parse()</label><br>
+<label><input type="radio" name="q4" value="b"> JSON.stringify()</label><br>
+<label><input type="radio" name="q4" value="c"> object.toJSON()</label>
+</div>
+
+<!-- Q5 -->
+<div class="card">
+<p><b>5. Which HTML element is required for Web Components?</b></p>
+<label><input type="radio" name="q5" value="a"> &lt;slot&gt;</label><br>
+<label><input type="radio" name="q5" value="b"> &lt;template&gt;</label><br>
+<label><input type="radio" name="q5" value="c"> &lt;custom&gt;</label>
+</div>
+
+<!-- Q6 -->
+<div class="card">
+<p><b>6. Which JavaScript feature allows writing asynchronous code as synchronous?</b></p>
+<label><input type="radio" name="q6" value="a"> Promises</label><br>
+<label><input type="radio" name="q6" value="b"> async/await</label><br>
+<label><input type="radio" name="q6" value="c"> Callbacks</label>
+</div>
+
+<!-- Q7 -->
+<div class="card">
+<p><b>7. What is the purpose of the HTML5 Canvas API?</b></p>
+<label><input type="radio" name="q7" value="a"> Drawing graphics</label><br>
+<label><input type="radio" name="q7" value="b"> Playing video</label><br>
+<label><input type="radio" name="q7" value="c"> Creating animations only</label>
+</div>
+
+<!-- Q8 -->
+<div class="card">
+<p><b>8. Which of the following prevents event bubbling?</b></p>
+<label><input type="radio" name="q8" value="a"> stopPropagation()</label><br>
+<label><input type="radio" name="q8" value="b"> preventDefault()</label><br>
+<label><input type="radio" name="q8" value="c"> stopDefault()</label>
+</div>
+
+<!-- Q9 -->
+<div class="card">
+<p><b>9. Which HTTP method is idempotent?</b></p>
+<label><input type="radio" name="q9" value="a"> POST</label><br>
+<label><input type="radio" name="q9" value="b"> PUT</label><br>
+<label><input type="radio" name="q9" value="c"> PATCH</label>
+</div>
+
+<!-- Q10 -->
+<div class="card">
+<p><b>10. Which HTML attribute protects a cookie from being accessed by JS?</b></p>
+<label><input type="radio" name="q10" value="a"> HttpOnly</label><br>
+<label><input type="radio" name="q10" value="b"> Secure</label><br>
+<label><input type="radio" name="q10" value="c"> SameSite</label>
+</div>
+
+<!-- Q11 -->
+<div class="card">
+<p><b>11. In the DOM, what type of node is created for whitespace?</b></p>
+<label><input type="radio" name="q11" value="a"> Comment Node</label><br>
+<label><input type="radio" name="q11" value="b"> Text Node</label><br>
+<label><input type="radio" name="q11" value="c"> Fragment Node</label>
+</div>
+
+<!-- Q12 -->
+<div class="card">
+<p><b>12. What does event.target represent?</b></p>
+<label><input type="radio" name="q12" value="a"> Element where event listener is attached</label><br>
+<label><input type="radio" name="q12" value="b"> Element that triggered the event</label><br>
+<label><input type="radio" name="q12" value="c"> Parent of the element</label>
+</div>
+
+<!-- Q13 -->
+<div class="card">
+<p><b>13. Which API is used for detecting device orientation?</b></p>
+<label><input type="radio" name="q13" value="a"> WebXR</label><br>
+<label><input type="radio" name="q13" value="b"> DeviceOrientation API</label><br>
+<label><input type="radio" name="q13" value="c"> WebBluetooth</label>
+</div>
+
+<!-- Q14 -->
+<div class="card">
+<p><b>14. Which JS method is used to schedule microtasks?</b></p>
+<label><input type="radio" name="q14" value="a"> setTimeout()</label><br>
+<label><input type="radio" name="q14" value="b"> queueMicrotask()</label><br>
+<label><input type="radio" name="q14" value="c"> requestAnimationFrame()</label>
+</div>
+
+<!-- Q15 -->
+<div class="card">
+<p><b>15. What is CORS used for?</b></p>
+<label><input type="radio" name="q15" value="a"> Preventing JS execution</label><br>
+<label><input type="radio" name="q15" value="b"> Allowing restricted cross-origin requests</label><br>
+<label><input type="radio" name="q15" value="c"> Encrypting HTTP packets</label>
+</div>
+
+<!-- Q16 -->
+<div class="card">
+<p><b>16. Which HTML tag is used inside a form to group elements?</b></p>
+<label><input type="radio" name="q16" value="a"> &lt;fieldset&gt;</label><br>
+<label><input type="radio" name="q16" value="b"> &lt;section&gt;</label><br>
+<label><input type="radio" name="q16" value="c"> &lt;group&gt;</label>
+</div>
+
+<!-- Q17 -->
+<div class="card">
+<p><b>17. Which is true about JavaScript closures?</b></p>
+<label><input type="radio" name="q17" value="a"> Inner function remembers outer function variables</label><br>
+<label><input type="radio" name="q17" value="b"> Only global variables</label><br>
+<label><input type="radio" name="q17" value="c"> Works only in strict mode</label>
+</div>
+
+<!-- Q18 -->
+<div class="card">
+<p><b>18. Which property defines flexbox direction?</b></p>
+<label><input type="radio" name="q18" value="a"> flex-flow</label><br>
+<label><input type="radio" name="q18" value="b"> flex-direction</label><br>
+<label><input type="radio" name="q18" value="c"> justify-content</label>
+</div>
+
+<!-- Q19 -->
+<div class="card">
+<p><b>19. Which JS feature ensures immutability?</b></p>
+<label><input type="radio" name="q19" value="a"> Object.seal()</label><br>
+<label><input type="radio" name="q19" value="b"> Object.freeze()</label><br>
+<label><input type="radio" name="q19" value="c"> Object.preventExtensions()</label>
+</div>
+
+<!-- Q20 -->
+<div class="card">
+<p><b>20. Which Web API enables background sync?</b></p>
+<label><input type="radio" name="q20" value="a"> Web Workers</label><br>
+<label><input type="radio" name="q20" value="b"> Background Sync API</label><br>
+<label><input type="radio" name="q20" value="c"> Webhooks</label>
+</div>
+
+<!-- Q21 -->
+<div class="card">
+<p><b>21. ES Modules use which keyword to import?</b></p>
+<label><input type="radio" name="q21" value="a"> using</label><br>
+<label><input type="radio" name="q21" value="b"> import</label><br>
+<label><input type="radio" name="q21" value="c"> require</label>
+</div>
+
+<!-- Q22 -->
+<div class="card">
+<p><b>22. What does CSS variable declaration start with?</b></p>
+<label><input type="radio" name="q22" value="a"> @@</label><br>
+<label><input type="radio" name="q22" value="b"> --</label><br>
+<label><input type="radio" name="q22" value="c"> $$</label>
+</div>
+
+<!-- Q23 -->
+<div class="card">
+<p><b>23. Which JS operator checks both value & type?</b></p>
+<label><input type="radio" name="q23" value="a"> ==</label><br>
+<label><input type="radio" name="q23" value="b"> ===</label><br>
+<label><input type="radio" name="q23" value="c"> !=</label>
+</div>
+
+<!-- Q24 -->
+<div class="card">
+<p><b>24. Which event fires when DOM is fully loaded?</b></p>
+<label><input type="radio" name="q24" value="a"> load</label><br>
+<label><input type="radio" name="q24" value="b"> ready</label><br>
+<label><input type="radio" name="q24" value="c"> DOMContentLoaded</label>
+</div>
+
+<!-- Q25 -->
+<div class="card">
+<p><b>25. JavaScript hoisting moves what to the top?</b></p>
+<label><input type="radio" name="q25" value="a"> Variables declarations</label><br>
+<label><input type="radio" name="q25" value="b"> Variable values</label><br>
+<label><input type="radio" name="q25" value="c"> All functions</label>
+</div>
+
+<button class="btn" type="button" onclick="calculate()">Submit Quiz</button>
+
+</form>
+
+<h2 id="result"></h2>
+
+<script>
+const answers = {
+  q1:"b", q2:"b", q3:"b", q4:"b", q5:"b",
+  q6:"b", q7:"a", q8:"a", q9:"b", q10:"a",
+  q11:"b", q12:"b", q13:"b", q14:"b", q15:"b",
+  q16:"a", q17:"a", q18:"b", q19:"b", q20:"b",
+  q21:"b", q22:"b", q23:"b", q24:"c", q25:"a"
+};
+
+function calculate() {
+    let score = 0;
+    const total = 25;
+    const passMarks = Math.ceil(total * 0.75); // 19 marks required
+
+    for (let q in answers) {
+        let selected = document.querySelector(`input[name=${q}]:checked`);
+        if (selected && selected.value === answers[q]) score++;
+    }
+
+    document.getElementById("result").innerHTML =
+      "Your Score: " + score + "/" + total;
+
+    // Check for 75% score
+    if (score >= passMarks) {
+        alert("Congratulations! You scored above 75%. Redirecting to your certificate...");
+        window.location.href = "certificationWebDesign.html";
+    } else {
+        alert("You need at least 75% (19 correct answers) to unlock the certificate.");
+    }
+}
+</script>
+
+</body>
+</html>
