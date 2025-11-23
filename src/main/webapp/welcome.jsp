@@ -550,7 +550,7 @@
                     <div class="contact-phone">
                         <i class="ion-md-call"></i>
                         <h3>Phone Number</h3>
-                        <p><a href="tel:+12356-789">7268860217<br>9326580318</a></p>
+                        <p><a href="tel:+12356-789">9326580318</a></p>
                     </div>
                 </div>
 
@@ -558,7 +558,7 @@
                     <div class="contact-email">
                         <i class="ion-md-mail"></i>
                         <h3>Email</h3>
-                        <p><a href="mailto:mohdaamir0360@gmail.com">mohdaamir0360@gmail.com <br>sy8673484@gmail.com</a></p>
+                        <p><a href="mailto:sy8673484@gmail.com">sy8673484@gmail.com</a></p>
                     </div>
                 </div>
             </div>
@@ -628,17 +628,16 @@
                             Psit Campus<br>
                             Kanpur<br>
                             India <br>
-                            <strong>Phone:</strong>91+7268860217<br>
-                            <strong>Email:</strong> mohdaamir0360@gmail.com<br>
+                            <strong>Phone:</strong>+91 9326580318<br>
+                            <strong>Email:</strong> sy8673484@gmail.com<br>
                             sy8673484@gmail.com<br>
                         </p>
 
                         <div class="social-links">
-                            <a href="https://x.com/MOHDAAM22788883?t=71HlAzIwQeVZLbrV8GzVtw&s=08"><i
-                                    class="ion-logo-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/mohd-aamir--/"><i class="ion-logo-linkedin"></i></a>
-                            <a href="https://www.instagram.com/mohammad_aamir_07860?igsh=MTlqOXM4NXAzMjY2Yw=="><i
-                                    class="ion-logo-instagram"></i></a>
+                          <a href="https://github.com/sandeepyadav9695"><i class="ion-logo-github"></i></a>
+                            <a href="https://www.linkedin.com/in/sandeep-yadav101"><i class="ion-logo-linkedin"></i></a>
+                            <a href="https://www.instagram.com/ahir.sandeep101"><i class="ion-logo-instagram"></i></a>
+                        
 
                         </div>
 
@@ -663,11 +662,10 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <a href="https://www.linkedin.com/in/mohd-aamir--/">Sandeep Yadav</a>. All Rights Reserved<br>
-                <!-- Template By <a href="https://www.linkedin.com/in/mohd-aamir--/">mohdaamir0360@gmail.com</a> -->
+                &copy; Copyright <a href="https://www.linkedin.com/in/sandeep-yadav101">Sandeep Yadav</a>. All Rights Reserved<br>
+           
             </div>
         </div>
     </footer>
